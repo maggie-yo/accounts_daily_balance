@@ -5,3 +5,4 @@ sources:
     schema: accounts_daily_balance  
     tables:
       - name: balance_*
+      - name: accounts_*
