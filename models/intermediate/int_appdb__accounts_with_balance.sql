@@ -1,6 +1,11 @@
-
+{{
+    config (
+        partition_by = {'field': 'balance_day', 'data_type': 'date'},
+        cluster_by=['account_id']
+    )
+}}
 select
-cast(b.balance_day as timestamp) as balance_day
+b.balance_day
 , b.account_id
 , b.balance_dkk
 , a.account_created_at

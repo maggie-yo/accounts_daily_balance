@@ -1,3 +1,9 @@
+{{
+    config (
+        partition_by = {'field': 'balance_day', 'data_type': 'date'},
+        cluster_by=['account_id']
+    )
+}}
 select
 balance_day
 , account_id

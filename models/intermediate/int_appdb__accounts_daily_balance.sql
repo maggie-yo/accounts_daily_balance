@@ -1,3 +1,9 @@
+{{
+    config (
+        partition_by = {'field': 'day_range', 'data_type': 'date'},
+        cluster_by=['account_id']
+    )
+}}
 with base as (
 select
 account_id

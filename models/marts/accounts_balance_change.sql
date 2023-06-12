@@ -1,3 +1,10 @@
+{{
+    config (
+        partition_by = {'field': 'day_range', 'data_type': 'date'},
+        cluster_by=['account_id']
+    )
+}}
+
 with balance_base as (
 select
 day_range
