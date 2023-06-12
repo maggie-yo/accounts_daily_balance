@@ -2,7 +2,29 @@ version: 2
 
 sources:
   - name: appdb
-    schema: accounts_daily_balance  
+    schema: accounts_daily_balance
+    loaded_at_field: load_day  
     tables:
+
       - name: balance_*
+        description: Balance update information for all account.
+        columns:
+          - name: account_id
+            description: Primary key of the balance table
+            tests:
+              - unique
+              - not_null
+          - name: delta_hash
+            description: Unique key for each row record.
+            tests:
+              - unique
+              - not_null
+
       - name: accounts_*
+        description: Unique key for each row record.
+        columns:
+          - name: delta_hash
+            description: Primary key of the balance table
+            tests:
+              - unique
+              - not_null  

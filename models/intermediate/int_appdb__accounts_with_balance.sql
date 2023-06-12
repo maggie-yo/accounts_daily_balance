@@ -1,6 +1,6 @@
 
 select
-b.balance_day
+cast(b.balance_day as timestamp) as balance_day
 , b.account_id
 , b.balance_dkk
 , a.account_created_at

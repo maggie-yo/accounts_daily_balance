@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_appdb__accounts_with_balance
+    tests:
+      - unique:
+          name: account_created_date_greater_than_balance_day
+          description:  "Ensure that the account_created_date is always greater than or equal to the balance_day."
+          severity: error
+          config:
+            where: "{{ account_created_date }} >= {{ balance_day }}"
