@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_appdb__accounts
+    description: TBA
+    meta:
+      owner: "@maggie"
+      end_destination: finance
+    columns:
+      - name: delta_hash
+        tests: &PK
+          - unique
+          - not_null
+
+  - name: stg_appdb__balance
+    description: TBA
+    meta:
+      owner: "@maggie"
+      end_destination: finance
+    columns:
+      - name: delta_hash
+        tests: *PK

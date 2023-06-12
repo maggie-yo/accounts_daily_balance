@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: appdb
+    schema: accounts_daily_balance
+    loaded_at_field: load_day  
+    tables:
+
+      - name: balance_*
+        description: Balance update information for all account.
+        columns:
+          - name: account_id
+            description: Primary key of the balance table
+            tests:
+              - not_null
+
+      - name: accounts_*
+        description: Unique key for each row record.
+        columns:
+          - name: account_id
+            description: Primary key of the balance table
+            tests:
+              - not_null

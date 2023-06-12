@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: int_appdb__accounts_with_balance
+    description: TBA
+    meta:
+      owner: "@maggie"
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "balance_day >= DATE(account_created_at)"
+
+  - name: int_appdb__accounts_daily_balance
+    description: TBA
+    meta:
+      owner: "@maggie"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - account_id
+            - day_range

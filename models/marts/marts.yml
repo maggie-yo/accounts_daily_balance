@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: accounts_last_known_balance
+    description: TBA
+    meta:
+      owner: "@maggie"
+      end_destination: finance
+    columns:
+      - name: account_id
+        tests: &PK
+          - unique
+          - not_null
+
+  - name: accounts_balance_change
+    description: TBA
+    meta:
+      owner: "@maggie"
+      end_destination: finance
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - account_id
+            - day_range
